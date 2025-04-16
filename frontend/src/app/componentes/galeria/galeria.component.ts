@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-galeria',
-  imports: [],
+  standalone: true,
+  imports: [HeaderComponent, FooterComponent],
   templateUrl: './galeria.component.html',
-  styleUrl: './galeria.component.css'
+  styleUrls: ['./galeria.component.css']
 })
 export class GaleriaComponent {
 

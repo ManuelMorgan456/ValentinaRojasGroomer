@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { HeaderComponent } from "./header/header.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-componentes',
-  imports: [],
+  standalone: true,
+  imports: [HeaderComponent, FooterComponent],
   templateUrl: './componentes.component.html',
-  styleUrl: './componentes.component.css'
+  styleUrls: ['./componentes.component.css']
 })
 export class ComponentesComponent {
 

@@ -1,1 +1,17 @@
+<app-header></app-header>
 <p>productos works!</p>
+
+<div class="container-productos">
+    <h2>Productos</h2>
+
+    <div class="grid-productos">
+        <div class="card-producto" *ngFor="let producto of productos">
+            <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.descripcion }}</p>
+            <p class="precio">${{ producto.precio }}</p>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
