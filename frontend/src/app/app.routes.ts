@@ -9,9 +9,13 @@ import { GaleriaComponent } from './componentes/galeria/galeria.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
+import { ComponentesComponent } from './componentes/componentes.component';
+import { ContactameComponent } from './componentes/contactame/contactame.component';
+import { PeluqueriaComponent } from './componentes/peluqueria/peluqueria.component';
 
 export const routes: Routes = [
-    { path: '', component: InicioComponent },
+    { path: 'componentes', component: ComponentesComponent },
+    { path: 'inicio', component: InicioComponent },
     { path: 'acerca', component: AcercaComponent },
     { path: 'barra-lateral', component: BarraLateralComponent },
     { path: 'blog', component: BlogComponent },
@@ -21,4 +25,6 @@ export const routes: Routes = [
     { path: 'header', component: HeaderComponent },
     { path: 'login', component: LoginComponent },
     { path: 'productos', component: ProductosComponent },
+    { path: 'contactame', component: ContactameComponent },
+    { path: 'peluqueria', component: PeluqueriaComponent },
 ];
