@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrls: ['./footer.component.css'] // corregido
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
 
+  ngOnInit(): void {
+    if (typeof window !== 'undefined') {
+      console.log(window.innerWidth);
+    }
+  }
 }
