@@ -1,73 +1,83 @@
-/* Estilos del header */
-.custom-navbar {
-    background-color: #87d2c6;
-    /* Verde azulado suave */
-    padding: 1.5rem 2rem;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: #87d2c6;
+    padding: 1.5rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
 }
 
-/* Logo alineado a la izquierda */
-.navbar-brand .logo-img {
-    height: 60px;
+/* Sombra suave al hacer scroll */
+.navbar.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilo general de los enlaces */
+/* Logo a la izquierda */
+.navbar .navbar-brand {
+    color: #3B3B3B;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Menú a la derecha */
+.navbar-nav {
+    margin-left: auto;
+    align-items: center;
+}
+
 .nav-link {
     color: #3B3B3B !important;
-    font-size: 1.1rem;
     margin-left: 1.5rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
     color: #ffffff !important;
 }
 
-/* Estilo de los elementos desplegables */
+/* Dropdown */
 .dropdown-menu {
     background-color: #ffffff;
-    border-radius: 0.25rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .dropdown-item {
     color: #3B3B3B;
-    font-size: 1rem;
+    transition: background 0.3s ease-in-out;
 }
 
 .dropdown-item:hover {
-    background-color: #f1f1f1;
+    background-color: #4A8C82;
+    color: white;
 }
 
-/* Alinear links a la derecha */
-.ml-auto {
-    margin-left: auto;
+/* Transición para menú colapsable */
+.collapse.navbar-collapse {
+    transition: max-height 0.5s ease;
 }
 
-/* Estilo para el botón hamburguesa en pantallas pequeñas */
-.navbar-toggler {
-    border: none;
-    background-color: transparent;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233B3B3B' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(59, 59, 59, 0.7)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
-/* Responsividad extra: centrar verticalmente en colapso */
+/* Responsive tweaks */
 @media (max-width: 991px) {
     .navbar-nav {
-        margin-top: 1rem;
-        text-align: right;
+        margin-left: 0;
+        text-align: center;
     }
 
     .nav-link {
         margin-left: 0;
-        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
     }
 }
