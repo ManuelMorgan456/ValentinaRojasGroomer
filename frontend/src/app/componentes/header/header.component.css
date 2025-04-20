@@ -1,0 +1,73 @@
+/* Estilos del header */
+.custom-navbar {
+    background-color: #87d2c6;
+    /* Verde azulado suave */
+    padding: 1.5rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Logo alineado a la izquierda */
+.navbar-brand .logo-img {
+    height: 60px;
+}
+
+/* Estilo general de los enlaces */
+.nav-link {
+    color: #3B3B3B !important;
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+}
+
+/* Estilo de los elementos desplegables */
+.dropdown-menu {
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    color: #3B3B3B;
+    font-size: 1rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Alinear links a la derecha */
+.ml-auto {
+    margin-left: auto;
+}
+
+/* Estilo para el botón hamburguesa en pantallas pequeñas */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233B3B3B' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(59, 59, 59, 0.7)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Responsividad extra: centrar verticalmente en colapso */
+@media (max-width: 991px) {
+    .navbar-nav {
+        margin-top: 1rem;
+        text-align: right;
+    }
+
+    .nav-link {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+}

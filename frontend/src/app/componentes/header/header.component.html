@@ -1,1 +1,46 @@
-<p>header works!hola hola</p>
+<nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+        <!-- Logo a la izquierda -->
+        <a class="navbar-brand" href="#">
+            <img src="assets/logo.png" alt="Logo" class="logo-img">
+        </a>
+
+        <!-- Botón hamburguesa para mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Enlaces a la derecha -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Peluquería</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Servicios
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Servicio 1</a></li>
+                        <li><a class="dropdown-item" href="#">Servicio 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Productos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Producto 1</a></li>
+                        <li><a class="dropdown-item" href="#">Producto 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="../galeria/">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="../blog/">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="../acerca/">Acerca de mí</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contáctame</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
