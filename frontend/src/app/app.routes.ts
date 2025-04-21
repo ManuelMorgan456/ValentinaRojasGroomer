@@ -12,6 +12,7 @@ import { ProductosComponent } from './componentes/productos/productos.component'
 import { ComponentesComponent } from './componentes/componentes.component';
 import { ContactameComponent } from './componentes/contactame/contactame.component';
 import { PeluqueriaComponent } from './componentes/peluqueria/peluqueria.component';
+import { ServiciosComponent } from './componentes/servicios/servicios.component';
 
 export const routes: Routes = [
     { path: 'componentes', component: ComponentesComponent },
@@ -27,4 +28,5 @@ export const routes: Routes = [
     { path: 'productos', component: ProductosComponent },
     { path: 'contactame', component: ContactameComponent },
     { path: 'peluqueria', component: PeluqueriaComponent },
+    { path: 'servicios', component: ServiciosComponent },
 ];
