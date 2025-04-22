@@ -8,10 +8,10 @@ const {
 } = require('../controllers/configImagenController');
 const { proteger } = require('../middleware/authMiddleware');
 
-// Protegidas para admin
-router.get('/', proteger, obtenerImagenes);
-router.post('/', proteger, crearImagen);
-router.put('/:id', proteger, editarImagen);
-router.delete('/:id', proteger, eliminarImagen);
+// Protegidas para admin 
+router.get('/', obtenerImagenes); //proteger
+router.post('/', crearImagen); //proteger
+router.put('/:id', editarImagen); //proteger
+router.delete('/:id', eliminarImagen); //proteger
 
 module.exports = router;

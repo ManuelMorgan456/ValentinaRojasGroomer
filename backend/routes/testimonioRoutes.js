@@ -14,8 +14,8 @@ router.post('/', crearTestimonio);
 router.get('/', obtenerTestimoniosAprobados);
 
 //Admin
-router.get('/todos', proteger, obtenerTodos);
-router.put('/:id', proteger, actualizarTestimonio);
-router.delete('/:id', proteger, eliminarTestimonio);
+router.get('/todos', obtenerTodos); //proteger
+router.put('/:id', actualizarTestimonio); //proteger
+router.delete('/:id', eliminarTestimonio); //proteger
 
 module.exports = router;

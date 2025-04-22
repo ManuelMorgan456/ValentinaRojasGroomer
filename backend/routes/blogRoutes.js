@@ -11,12 +11,13 @@ const {
 const { proteger } = require('../middleware/authMiddleware');
 
 // Rutas protegidas
-router.post('/', proteger, crearPost);
-router.put('/:id', proteger, actualizarPost);
-router.delete('/:id', proteger, eliminarPost);
+router.post('/', crearPost); //proteger
+router.put('/:id', actualizarPost); //proteger
+router.delete('/:id', eliminarPost); //proteger
 
 // Rutas públicas
 router.get('/', obtenerPosts);
 router.get('/:id', obtenerPost);
 
 module.exports = router;
+z

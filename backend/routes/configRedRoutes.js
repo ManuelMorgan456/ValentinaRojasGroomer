@@ -9,9 +9,9 @@ const {
 const { proteger } = require('../middleware/authMiddleware');
 
 // Protegido para admins
-router.get('/', proteger, obtenerRedes);
-router.post('/', proteger, crearRed);
-router.put('/:id', proteger, editarRed);
-router.delete('/:id', proteger, eliminarRed);
+router.get('/', obtenerRedes); //proteger
+router.post('/', crearRed); //proteger
+router.put('/:id', editarRed); //proteger
+router.delete('/:id', eliminarRed); //proteger
 
 module.exports = router;

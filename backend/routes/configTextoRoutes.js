@@ -9,9 +9,9 @@ const {
 const { proteger } = require('../middleware/authMiddleware');
 
 // Solo accesibles para admin logueado
-router.get('/', proteger, obtenerTextos);
-router.post('/', proteger, crearTexto);
-router.put('/:id', proteger, editarTexto);
-router.delete('/:id', proteger, eliminarTexto);
+router.get('/', obtenerTextos); //proteger
+router.post('/', crearTexto); //proteger
+router.put('/:id', editarTexto); //proteger
+router.delete('/:id', eliminarTexto); //proteger
 
 module.exports = router;

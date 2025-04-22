@@ -14,9 +14,9 @@ const { proteger } = require('../middleware/authMiddleware');
 router.post('/', crearConsulta);
 
 // Solo admin puede ver o gestionar
-router.get('/', proteger, obtenerConsultas);
-router.get('/:id', proteger, obtenerConsulta);
-router.put('/:id/leido', proteger, marcarComoLeido);
-router.delete('/:id', proteger, eliminarConsulta);
+router.get('/', obtenerConsultas); //proteger
+router.get('/:id', obtenerConsulta); //proteger
+router.put('/:id/leido', marcarComoLeido); //proteger
+router.delete('/:id', eliminarConsulta); //proteger
 
 module.exports = router;

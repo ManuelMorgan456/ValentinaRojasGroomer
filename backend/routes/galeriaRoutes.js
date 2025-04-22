@@ -17,10 +17,10 @@ router.get('/activas', obtenerGaleriaActiva);
 router.get('/portadas', obtenerPortadas);
 
 // Admin
-router.post('/', proteger, crearImagen);
-router.get('/', proteger, obtenerGaleria);
-router.get('/:id', proteger, obtenerImagen);
-router.put('/:id', proteger, editarImagen);
-router.delete('/:id', proteger, eliminarImagen);
+router.post('/', crearImagen); //proteger
+router.get('/', obtenerGaleria); //proteger
+router.get('/:id', obtenerImagen);  //proteger
+router.put('/:id', editarImagen); //proteger
+router.delete('/:id', eliminarImagen); //proteger
 
 module.exports = router;

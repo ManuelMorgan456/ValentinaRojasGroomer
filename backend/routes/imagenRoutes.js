@@ -14,9 +14,9 @@ const { proteger } = require('../middleware/authMiddleware');
 router.get('/publicas', obtenerActivas);
 
 //Rutas privadas (Admin)
-router.post('/', proteger, crearImagen);
-router.get('/', proteger, obtenerTodas);
-router.put('/:id', proteger, actualizarImagen);
-router.delete('/:id', proteger, eliminarImagen);
+router.post('/', crearImagen); //proteger
+router.get('/', obtenerTodas); //proteger
+router.put('/:id', actualizarImagen); //proteger
+router.delete('/:id', eliminarImagen); //proteger
 
 module.exports = router;

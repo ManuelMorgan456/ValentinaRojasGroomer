@@ -15,10 +15,10 @@ const { proteger } = require('../middleware/authMiddleware');
 router.get('/activos', obtenerProductosActivos);
 
 // Admin
-router.post('/', proteger, crearProducto);
-router.get('/', proteger, obtenerProductos);
-router.get('/:id', proteger, obtenerProducto);
-router.put('/:id', proteger, editarProducto);
-router.delete('/:id', proteger, eliminarProducto);
+router.post('/', crearProducto); //proteger
+router.get('/', obtenerProductos); //proteger
+router.get('/:id', obtenerProducto); //proteger
+router.put('/:id', editarProducto); //proteger
+router.delete('/:id', eliminarProducto); //proteger
 
 module.exports = router;
