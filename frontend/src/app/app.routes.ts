@@ -14,6 +14,18 @@ import { ComponentesComponent } from './componentes/componentes.component';
 import { ContactameComponent } from './componentes/contactame/contactame.component';
 import { PeluqueriaComponent } from './componentes/peluqueria/peluqueria.component';
 import { ServiciosComponent } from './componentes/servicios/servicios.component';
+import { DInicioComponent } from './componentes/d-inicio/d-inicio.component';
+import { DPeluqueriaComponent } from './componentes/d-peluqueria/d-peluqueria.component';
+import { DServiciosComponent } from './componentes/d-servicios/d-servicios.component';
+import { DProductosComponent } from './componentes/d-productos/d-productos.component';
+import { DGaleriaComponent } from './componentes/d-galeria/d-galeria.component';
+import { DBlogComponent } from './componentes/d-blog/d-blog.component';
+import { DAcercaDeMiComponent } from './componentes/d-acerca-de-mi/d-acerca-de-mi.component';
+import { DContactameComponent } from './componentes/d-contactame/d-contactame.component';
+import { DMetricasComponent } from './componentes/d-metricas/d-metricas.component';
+import { DCrearPerfilComponent } from './componentes/d-crear-perfil/d-crear-perfil.component';
+
+
 
 export const routes: Routes = [
     { path: 'componentes', component: ComponentesComponent },
@@ -31,4 +43,14 @@ export const routes: Routes = [
     { path: 'contactame', component: ContactameComponent },
     { path: 'peluqueria', component: PeluqueriaComponent },
     { path: 'servicios', component: ServiciosComponent },
+    { path: 'd-inicio', component: DInicioComponent },
+    { path: 'd-peluqueria', component: DPeluqueriaComponent },
+    { path: 'd-servicios', component: DServiciosComponent },
+    { path: 'd-productos', component: DProductosComponent },
+    { path: 'd-galeria', component: DGaleriaComponent },
+    { path: 'd-blog', component: DBlogComponent },
+    { path: 'd-acerca-de-mi', component: DAcercaDeMiComponent },
+    { path: 'd-contactame', component: DContactameComponent },
+    { path: 'd-metricas', component: DMetricasComponent },
+    { path: 'd-crear-perfil', component: DCrearPerfilComponent },
 ];
