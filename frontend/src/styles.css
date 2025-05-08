@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #F8F9F5;
+    /* background-color: #d6c4c494; */
+    background-image: url('../src/assets/FFF.png');
+    background-size: cover;
+    /* Ajusta al tamaño del viewport */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* Evita que se repita */
 }
