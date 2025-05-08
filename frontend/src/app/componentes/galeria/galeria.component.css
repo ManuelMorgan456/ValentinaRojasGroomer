@@ -1,0 +1,51 @@
+.before-after-container {
+    text-align: center;
+    background: #fcfcf5;
+    padding: 2rem;
+}
+
+.before-after {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 1rem auto;
+    overflow: hidden;
+    height: auto;
+}
+
+.before-after .before-img,
+.before-after .after-img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+}
+
+.before-after .before-img {
+    z-index: 1;
+}
+
+.before-after .after-img-wrapper {
+    z-index: 2;
+    overflow: hidden;
+    width: 50%;
+    /* valor inicial */
+}
+
+.before-after .after-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.before-after input[type="range"] {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    margin-top: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+}

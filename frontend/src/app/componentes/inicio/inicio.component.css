@@ -1,0 +1,96 @@
+/* Carrusel principal */
+.carousel,
+.carousel-inner,
+.carousel-item {
+    width: 100vw;
+    height: 100vh;
+}
+
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de zoom solo en pantallas grandes */
+@media (min-width: 781px) {
+    .carousel-item {
+        animation: zoomIn 6s ease-in-out forwards;
+    }
+}
+
+/* Animación de zoom */
+@keyframes zoomIn {
+    from {
+        background-size: 105%;
+    }
+
+    to {
+        background-size: 120%;
+    }
+}
+
+/* Texto animado dentro del carrusel */
+.overlay-text {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    animation: fadeUp 2s ease-out forwards;
+}
+
+.carousel-item.active .overlay-text {
+    animation: fadeUp 2s ease-out forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividad general */
+@media (max-width: 1200px) {
+
+    .carousel,
+    .carousel-item {
+        height: 85vh;
+    }
+}
+
+@media (max-width: 780px) {
+
+    .carousel,
+    .carousel-item {
+        height: 70vh;
+    }
+
+    .overlay-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .overlay-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .carousel,
+    .carousel-item {
+        height: 50vh;
+    }
+}
+
+/* Eliminado: .imagen-fondo-inicio, ya que ahora usas carrusel en su lugar */
+/* Eliminado: animación duplicada de zoomIn y estilos innecesarios para .imagen-fondo-inicio */

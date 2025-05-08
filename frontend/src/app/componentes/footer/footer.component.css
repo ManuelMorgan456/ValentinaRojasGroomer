@@ -54,6 +54,11 @@
     text-align: center;
 }
 
+.footer-newsletter a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /*Redes sociales*/
 .footer-social {
     display: flex;
@@ -72,6 +77,11 @@
     order: 1;
     /* Esto asegura que se coloque después dentro del grid */
     text-align: center;
+}
+
+.footer-contact a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /*Iconos configuración*/

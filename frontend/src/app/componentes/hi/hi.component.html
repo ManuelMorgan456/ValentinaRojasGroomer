@@ -1,0 +1,47 @@
+<nav [ngClass]="{ 'scrolled-navbar': isScrolled }" class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="../inicio/">
+            <img src="../../../assets/100g_sin_fondo.png" alt="Logo" class="logo-img" />
+        </a>
+
+        <!-- Botón hamburguesa -->
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isNavbarCollapsed"
+            aria-controls="navbarContent" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú colapsable -->
+        <div class="navbar-collapse collapse" [class.show]="!isNavbarCollapsed" id="navbarContent">
+            <ul class="navbar-nav align-items-center justify-content-end">
+                <li class="nav-item"><a class="nav-link" href="../inicio/" (click)="closeNavbar()">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="../peluqueria/" (click)="closeNavbar()">Peluquería</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="../servicios/" (click)="closeNavbar()">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="../productos/" (click)="closeNavbar()">Productos</a></li>
+
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Servicio 1</a></li>
+                        <li><a class="dropdown-item" href="#">Servicio 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Productos</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Producto 1</a></li>
+                        <li><a class="dropdown-item" href="#">Producto 2</a></li>
+                    </ul>
+                </li> -->
+
+                <li class="nav-item"><a class="nav-link" href="../galeria/" (click)="closeNavbar()">Galería</a></li>
+                <li class="nav-item"><a class="nav-link" href="../blog/" (click)="closeNavbar()">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="../acerca/" (click)="closeNavbar()">Acerca de mí</a></li>
+                <li class="nav-item"><a class="nav-link" href="../contactame/" (click)="closeNavbar()">Contáctame</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

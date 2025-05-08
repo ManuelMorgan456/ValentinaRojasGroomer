@@ -7,6 +7,7 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
 import { FooterComponent } from './componentes/footer/footer.component';
 import { GaleriaComponent } from './componentes/galeria/galeria.component';
 import { HeaderComponent } from './componentes/header/header.component';
+import { HiComponent } from './componentes/hi/hi.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { ComponentesComponent } from './componentes/componentes.component';
@@ -24,6 +25,7 @@ export const routes: Routes = [
     { path: 'footer', component: FooterComponent },
     { path: 'galeria', component: GaleriaComponent },
     { path: 'header', component: HeaderComponent },
+    { path: 'hi', component: HiComponent },
     { path: 'login', component: LoginComponent },
     { path: 'productos', component: ProductosComponent },
     { path: 'contactame', component: ContactameComponent },

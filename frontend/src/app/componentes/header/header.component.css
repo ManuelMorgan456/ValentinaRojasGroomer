@@ -17,10 +17,50 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+/* TRANSPARENTE SOLO EN HOME SIN SCROLL */
+/* .navbar.home {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+} */
+
 /* Sombra suave al hacer scroll */
-.navbar.scrolled {
+/* .navbar.scrolled {
+    background-color: #87d2c6;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
 }
+
+
+
+
+
+/* */
+/* .custom-navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &.home {
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    &.scrolled {
+        background-color: #6ccfcf;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+} */
+*/
 
 /* Logo a la izquierda */
 .navbar .navbar-brand {

@@ -1,3 +1,32 @@
-<app-header></app-header>
-<p>inicio works!</p>
+<app-hi></app-hi>
+<!-- <div class="imagen-fondo-inicio"></div> -->
+
+
+<div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let slide of slides; let i = index" [ngClass]="{ active: i === 0 }"
+            [ngStyle]="{ 'background-image': 'url(' + slide.image + ')' }">
+            <div class="overlay-text">
+                <h1>{{ slide.title }}</h1>
+                <p>{{ slide.description }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique quis ad quibusdam commodi odio eveniet
+    perspiciatis consectetur neque nesciunt quae quidem excepturi sed saepe necessitatibus fuga, culpa atque vel quia?
+</p>
+
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+
 <app-footer></app-footer>
