@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 export interface BlogPost {
   _id: string;
   titulo: string;
+  resumen: string;
+  detalle: string;
   contenido: string;
   imagen: string;
   creadoPor?: string;

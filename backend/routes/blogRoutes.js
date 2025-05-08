@@ -20,4 +20,3 @@ router.get('/', obtenerPosts);
 router.get('/:id', obtenerPost);
 
 module.exports = router;
-z
