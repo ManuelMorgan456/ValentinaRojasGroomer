@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
 body {
-    /* background-color: #d6c4c494; */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
     background-image: url('../src/assets/FFF.png');
     background-size: cover;
     /* Ajusta al tamaño del viewport */

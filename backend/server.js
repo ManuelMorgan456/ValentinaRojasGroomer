@@ -2,9 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const uploadRoutes = require('./routes/upload');
 
-
-//Configuración inicial
 dotenv.config();
 const app = express();
 
@@ -13,17 +12,22 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-//Conexión a Mongo
+// ① SIRVE /uploads COMO ESTÁTICO       ← añade esto
+app.use('/uploads', express.static('uploads'));
+// ② RUTAS DE MULTER PARA SUBIR IMÁGENES ← y esto
+app.use('/uploads', uploadRoutes);
+
+// Conexión a Mongo
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log('🟢 Conectado a MongoDB'))
     .catch(err => console.error('🔴 Error al conectar a MongoDB:', err));
 
-//Ruta base de prueba
+// Ruta base de prueba
 app.get('/', (req, res) => {
     res.send('Api funcionando 🐾');
 });
 
-//Importar rutas
+// Importar rutas
 const servicioRoutes = require('./routes/servicioRoutes');
 const testimonioRoutes = require('./routes/testimonioRoutes');
 const imagenRoutes = require('./routes/imagenRoutes');
@@ -38,7 +42,7 @@ const usuarioRoutes = require('./routes/usuarioRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const recuperarRoutes = require('./routes/recuperarRoutes');
 
-//Usar rutas
+// Usar rutas de API
 app.use('/api/servicios', servicioRoutes);
 app.use('/api/testimonios', testimonioRoutes);
 app.use('/api/imagenes', imagenRoutes);
@@ -53,12 +57,8 @@ app.use('/api/usuarios', usuarioRoutes);
 app.use('/api/login', loginRoutes);
 app.use('/api/password', recuperarRoutes);
 
-//Puerto
+// Puerto
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
 });
-
-
-
-

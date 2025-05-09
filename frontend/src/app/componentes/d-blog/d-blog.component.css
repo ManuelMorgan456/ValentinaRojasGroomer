@@ -1,0 +1,88 @@
+.blog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.form-wrapper {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 0.5rem;
+}
+
+/* Contenedor de tarjetas */
+.blog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Cada tarjeta */
+.blog-item {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Encabezado de la tarjeta: imagen */
+.blog-item-header {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* ratio cuadrado */
+    overflow: hidden;
+}
+
+.blog-item-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* recorta y centra */
+    object-position: top;
+}
+
+/* Cuerpo con título/estado */
+.blog-item-body {
+    padding: 1rem;
+}
+
+.blog-item-body h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.blog-item-body p {
+    margin: 0;
+    color: #555;
+}
+
+/* Acciones: botones más amigables */
+.blog-item-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0 1rem 1rem;
+}
+
+.blog-item-actions button {
+    flex: 1;
+    padding: 0.5rem;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.blog-item-actions button:hover {
+    background: #eee;
+}

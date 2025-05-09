@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { HiComponent } from "../hi/hi.component";
 import { CommonModule } from '@angular/common';
-import { BlogService, BlogPost } from '../../services/blog.service'; // Asegúrate de importar el servicio
-
-
+import { BlogService, BlogPost } from '../../services/blog.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-blog',
@@ -23,17 +22,24 @@ export class BlogComponent implements OnInit {
   constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
-    this.loading = true; // 👈 activamos el loading
+    this.loading = true;
+
     this.blogService.getPosts().subscribe({
       next: (data) => {
         this.posts = data
           .filter(post => post.publicado)
-          .map(post => ({ ...post, expandido: false }));
-        this.loading = false; // 👈 desactivamos el loading al completar
+          .map(post => ({
+            ...post,
+            imagen: post.imagen?.startsWith('http')
+              ? post.imagen
+              : `${environment.apiUrl.replace('/api', '')}${post.imagen}`,
+            expandido: false
+          }));
+        this.loading = false;
       },
       error: (err) => {
         console.error('Error cargando posts', err);
-        this.loading = false; // 👈 también desactivamos si hay error
+        this.loading = false;
       }
     });
   }

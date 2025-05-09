@@ -1,2 +1,42 @@
 <app-barra-lateral></app-barra-lateral>
-<p>d-blog works!</p>
+
+<div class="d-blog-container">
+    <!-- Encabezado y botón Crear -->
+    <div class="blog-header">
+        <h2>Gestión de Blogs</h2>
+        <button class="btn-crear" (click)="mostrarFormularioCrear()">+ Crear nuevo</button>
+    </div>
+
+    <!-- Formulario de creación/edición -->
+    <div *ngIf="modoCrear" class="form-wrapper">
+        <app-d-blog-form [post]="postEditando" (onSuccess)="onGuardado()"></app-d-blog-form>
+    </div>
+
+    <!-- Loading -->
+    <div *ngIf="loading" class="loading">Cargando posts...</div>
+
+    <!-- Listado de posts como tarjetas -->
+    <div *ngIf="!loading" class="blog-list">
+        <div class="blog-item" *ngFor="let post of posts">
+            <!-- Cabecera: imagen del blog -->
+            <div class="blog-item-header">
+                <img [src]="post.imagenFull" alt="{{ post.titulo }}" />
+            </div>
+
+            <!-- Cuerpo: título y estado -->
+            <div class="blog-item-body">
+                <h3>{{ post.titulo }}</h3>
+                <p>{{ post.publicado ? 'Publicado' : 'Borrador' }}</p>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="blog-item-actions">
+                <button (click)="togglePublicacion(post._id!)">
+                    {{ post.publicado ? 'Despublicar' : 'Publicar' }}
+                </button>
+                <button (click)="editarPost(post)">Editar</button>
+                <button (click)="eliminarPost(post._id!)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -89,6 +89,15 @@
 }
 
 
+/*Contenido expandido*/
+.contenido {
+    margin-top: 10px;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
 /*No POST*/
 .no-posts {
     grid-column: 1 / -1;

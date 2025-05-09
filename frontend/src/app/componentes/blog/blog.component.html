@@ -18,6 +18,14 @@
     <div class="cards-grid" *ngIf="!loading">
         <div class="card" *ngFor="let post of postsFiltrados" [class.expanded]="post.expandido">
 
+            <p *ngIf="!post.expandido && post.resumen">{{ post.resumen }}</p>
+            <p *ngIf="post.expandido && post.detalle">{{ post.detalle }}</p>
+
+            <!-- Nuevo: Mostrar contenido si el post está expandido -->
+            <div *ngIf="post.expandido && post.contenido" class="contenido">
+                <p>{{ post.contenido }}</p>
+            </div>
+
             <!-- Validar que haya imagen -->
             <!-- <img [src]="post.imagen" alt="Imagen del blog" /> -->
             <img *ngIf="post.imagen" [src]="post.imagen" alt="Imagen del blog" />

@@ -1,0 +1,47 @@
+<form [formGroup]="blogForm" (ngSubmit)="guardar()" class="blog-form-card">
+    <h2>{{ post ? 'Editar publicación' : 'Nueva publicación' }}</h2>
+
+    <div class="form-group">
+        <label>Título</label>
+        <input formControlName="titulo" placeholder="Ingresa el título del post" />
+        <small *ngIf="blogForm.get('titulo')?.invalid && blogForm.get('titulo')?.touched">Campo requerido</small>
+    </div>
+
+    <div class="form-group">
+        <label>Resumen</label>
+        <textarea formControlName="resumen" rows="2" placeholder="Breve descripción del post..."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Detalle</label>
+        <textarea formControlName="detalle" rows="3" placeholder="Agrega más detalles..."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Contenido</label>
+        <textarea formControlName="contenido" rows="5" placeholder="Contenido principal del post..."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Seleccionar Imagen</label>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+        <div *ngIf="imagenSubida">
+            <img [src]="imagenSubida" alt="Vista previa" class="preview-img" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Etiquetas (separadas por comas)</label>
+        <input type="text" [value]="blogForm.value.etiquetas" (input)="actualizarEtiquetas($event)" />
+    </div>
+
+    <div class="form-group checkbox">
+        <label>
+            <input type="checkbox" formControlName="publicado" /> ¿Publicar ahora?
+        </label>
+    </div>
+
+    <button type="submit" [disabled]="loading">
+        {{ loading ? 'Guardando...' : post ? 'Actualizar' : 'Crear' }}
+    </button>
+</form>

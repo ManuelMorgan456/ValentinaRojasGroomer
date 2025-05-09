@@ -1,23 +1,23 @@
 <div class="sidebar">
     <div class="admin-info">
-        <img src="assets/img/admin.jpg" alt="Admin" class="admin-img">
+        <img src="assets/img/admin.jpg" alt="Admin" class="admin-img" />
         <h4 class="admin-name">Nombre Admin</h4>
     </div>
 
     <nav class="nav-links">
-        <a href="../d-inicio/">Inicio</a>
-        <a href="../d-peluqueria/">Peluquería</a>
-        <a href="../d-servicios/">Servicios</a>
-        <a href="../d-productos/">Productos</a>
-        <a href="../d-galeria/">Galería</a>
-        <a href="../d-blog/">Blog</a>
-        <a href="../d-acerca-de-mi/">Acerca de mí</a>
-        <a href="../d-contactame/">Contáctame</a>
-        <a href="../d-metricas/">Métricas</a>
+        <a routerLink="/dashboard/inicio" routerLinkActive="active">Inicio</a>
+        <a routerLink="/dashboard/peluqueria" routerLinkActive="active">Peluquería</a>
+        <a routerLink="/dashboard/servicios" routerLinkActive="active">Servicios</a>
+        <a routerLink="/dashboard/productos" routerLinkActive="active">Productos</a>
+        <a routerLink="/dashboard/galeria" routerLinkActive="active">Galería</a>
+        <a routerLink="/dashboard/blog" routerLinkActive="active">Blog</a>
+        <a routerLink="/dashboard/acerca-de-mi" routerLinkActive="active">Acerca de mí</a>
+        <a routerLink="/dashboard/contactame" routerLinkActive="active">Contáctame</a>
+        <a routerLink="/dashboard/metricas" routerLinkActive="active">Métricas</a>
     </nav>
 
     <div class="bottom-links">
-        <a href="../d-crear-perfil/">Crear perfil</a>
-        <a href="#">Cerrar sesión</a>
+        <a routerLink="/dashboard/crear-perfil" routerLinkActive="active">Crear perfil</a>
+        <a (click)="cerrarSesion()">Cerrar sesión</a>
     </div>
 </div>

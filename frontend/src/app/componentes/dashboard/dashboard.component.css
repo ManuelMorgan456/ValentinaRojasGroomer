@@ -1,0 +1,11 @@
+.dashboard-layout {
+    display: flex;
+}
+
+/* Esto evita que el contenido se meta debajo de la barra */
+.dashboard-content {
+    margin-left: 240px;
+    /* Igual que el ancho de .sidebar */
+    padding: 20px;
+    width: 100%;
+}
