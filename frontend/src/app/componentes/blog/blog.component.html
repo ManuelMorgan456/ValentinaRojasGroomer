@@ -10,18 +10,40 @@
         </button>
     </div>
 
-    <div class="cards-grid">
+    <div *ngIf="loading" class="loading-container">
+        <div class="spinner"></div>
+        <p>Cargando Blog...</p>
+    </div>
+
+    <div class="cards-grid" *ngIf="!loading">
         <div class="card" *ngFor="let post of postsFiltrados" [class.expanded]="post.expandido">
-            <img [src]="post.imagen" alt="Imagen del blog" />
+
+            <!-- Validar que haya imagen -->
+            <!-- <img [src]="post.imagen" alt="Imagen del blog" /> -->
+            <img *ngIf="post.imagen" [src]="post.imagen" alt="Imagen del blog" />
+
             <div class="card-content">
                 <h3>{{ post.titulo }}</h3>
-                <p *ngIf="!post.expandido">{{ post.resumen }}</p>
-                <p *ngIf="post.expandido">{{ post.detalle }}</p>
+
+                <!-- Validar que haya resumen y detalle -->
+                <!-- <p *ngIf="!post.expandido">{{ post.resumen }}</p> -->
+                <p *ngIf="!post.expandido && post.resumen">{{ post.resumen }}</p>
+                <!-- <p *ngIf="post.expandido">{{ post.detalle }}</p> -->
+                <p *ngIf="post.expandido && post.detalle">{{ post.detalle }}</p>
+
+
                 <button (click)="toggleExpandir(post)">
                     {{ post.expandido ? 'Leer menos' : 'Leer más' }}
                 </button>
             </div>
         </div>
+
+        <!-- Si NO hay posts, mostramos un mensaje -->
+        <div *ngIf="postsFiltrados.length === 0" class="no-posts">
+            <div class="icon">&#128578;</div> <!-- emoji cara sonriente -->
+            <p>No hay artículos en esta categoría aún.</p>
+        </div>
+
     </div>
 </div>
 

@@ -18,14 +18,23 @@ export class BlogComponent implements OnInit {
   categorias = ['Alimentación', 'Cuidados', 'Eventos', 'Higiene'];
   categoriaSeleccionada = 'Alimentación';
   posts: BlogPost[] = [];
+  loading: boolean = true;
 
   constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
-    this.blogService.getPosts().subscribe(data => {
-      this.posts = data
-        .filter(post => post.publicado)
-        .map(post => ({ ...post, expandido: false })); // 👈 agrega `expandido` a cada post
+    this.loading = true; // 👈 activamos el loading
+    this.blogService.getPosts().subscribe({
+      next: (data) => {
+        this.posts = data
+          .filter(post => post.publicado)
+          .map(post => ({ ...post, expandido: false }));
+        this.loading = false; // 👈 desactivamos el loading al completar
+      },
+      error: (err) => {
+        console.error('Error cargando posts', err);
+        this.loading = false; // 👈 también desactivamos si hay error
+      }
     });
   }
 
