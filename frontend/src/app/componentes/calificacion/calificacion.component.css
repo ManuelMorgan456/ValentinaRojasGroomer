@@ -1,0 +1,48 @@
+.calificacion * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cuerpo {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: floralwhite;
+}
+
+.rating-box {
+    position: relative;
+    background: rgb(161, 158, 165);
+    padding: 25px 50px 35px;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.rating-box header {
+    font-size: 22px;
+    color: aliceblue;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.rating-box .stars {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.stars i {
+    color: aliceblue;
+    font-size: 35px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    transform: rotate(135deg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stars i.active {
+    color: aqua;
+}

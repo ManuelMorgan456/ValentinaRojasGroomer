@@ -9,6 +9,10 @@ import { GaleriaComponent } from './componentes/galeria/galeria.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
+import { TestimoniosComponent } from './componentes/testimonios/testimonios.component';
+import { CalificacionComponent } from './componentes/calificacion/calificacion.component';
+import { SliderComponent } from './componentes/slider/slider.component';
+
 
 export const routes: Routes = [
     { path: '', component: InicioComponent },
@@ -21,4 +25,9 @@ export const routes: Routes = [
     { path: 'header', component: HeaderComponent },
     { path: 'login', component: LoginComponent },
     { path: 'productos', component: ProductosComponent },
+    { path: 'testimonios', component: TestimoniosComponent },
+    { path: 'calificacion', component: CalificacionComponent },
+    { path: 'slider', component: SliderComponent },
+
+
 ];

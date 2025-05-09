@@ -1,0 +1,9 @@
+<div class="cuerpo">
+  <div class="rating-box">
+    <header>¿Quieres dejarnos una calificación?</header>
+    <div class="stars">
+      <i class="fas fa-bone" *ngFor="let star of stars; let i = index" [class.active]="i < rating"
+        (click)="setRating(i + 1)"></i>
+    </div>
+  </div>
+</div>
