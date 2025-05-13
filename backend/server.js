@@ -41,6 +41,7 @@ const configRedRoutes = require('./routes/configRedRoutes');
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const recuperarRoutes = require('./routes/recuperarRoutes');
+const sliderRoutes = require('./routes/sliderRoutes');
 
 // Usar rutas de API
 app.use('/api/servicios', servicioRoutes);
@@ -56,6 +57,7 @@ app.use('/api/config-redes', configRedRoutes);
 app.use('/api/usuarios', usuarioRoutes);
 app.use('/api/login', loginRoutes);
 app.use('/api/password', recuperarRoutes);
+app.use('/api/sliders', sliderRoutes);
 
 // Puerto
 const PORT = process.env.PORT || 4000;
