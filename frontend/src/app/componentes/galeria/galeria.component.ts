@@ -1,5 +1,4 @@
-import { Component, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { HiComponent } from "../hi/hi.component";
@@ -11,23 +10,22 @@ import { HiComponent } from "../hi/hi.component";
   styleUrls: ['./galeria.component.css'],
   imports: [FooterComponent, CommonModule, HiComponent]
 })
-export class GaleriaComponent implements AfterViewInit {
+export class GaleriaComponent {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+  @ViewChild('beforeImage', { static: true }) beforeImage!: ElementRef<HTMLImageElement>;
+  @ViewChild('sliderLine', { static: true }) sliderLine!: ElementRef<HTMLDivElement>;
+  @ViewChild('sliderIcon', { static: true }) sliderIcon!: ElementRef<HTMLDivElement>;
 
-  ngAfterViewInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      const slider = document.getElementById('slider') as HTMLInputElement;
-      const afterWrapper = document.getElementById('afterWrapper') as HTMLElement;
+  onSliderInput(event: Event): void {
+    const value = (event.target as HTMLInputElement).value + '%';
 
-      if (slider && afterWrapper) {
-        slider.addEventListener('input', () => {
-          const value = parseInt(slider.value, 10);
-          afterWrapper.style.width = `${value}%`;
-        });
+    const beforeImg = document.querySelector('.before-image') as HTMLElement;
+    const sliderLine = document.querySelector('.slider-line') as HTMLElement;
+    const sliderIcon = document.querySelector('.slider-icon') as HTMLElement;
 
-        afterWrapper.style.width = '50%'; // valor inicial
-      }
-    }
+    beforeImg.style.width = value;
+    sliderLine.style.left = value;
+    sliderIcon.style.left = value;
   }
+
 }

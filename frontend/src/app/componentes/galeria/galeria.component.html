@@ -2,23 +2,41 @@
 
 <br><br><br><br><br><br><br><br>
 
-<div class="before-after-container">
-    <h2>Galería de Peluquería Canina – Antes y Después</h2>
 
-    <div class="before-after">
-        <img src="assets/antes1.jpg" class="before-img" />
-        <div class="after-img-wrapper" id="afterWrapper">
-            <img src="assets/despues1.jpg" class="after-img" />
+<div class="image-comparison">
+    <div class="images-container">
+        <img class="before-image" src="../../../assets/b1.jpg" alt="" />
+        <img class="after-image" src="../../../assets/a1.jpg" alt="" />
+
+        <div class="slider-line"></div>
+        <div class="slider-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+            </svg>
         </div>
-        <input type="range" min="0" max="100" value="50" id="slider" />
-    </div>
 
-    <p>Corte de raza pequeña con estilo moderno.</p>
+        <input type="range" class="slider" min="0" max="100" (input)="onSliderInput($event)" />
+    </div>
 </div>
 
+<div class="image-comparison">
+    <div class="images-container">
+        <img class="before-image" src="../../../assets/b1.jpg" alt="" />
+        <img class="after-image" src="../../../assets/a1.jpg" alt="" />
 
+        <div class="slider-line"></div>
+        <div class="slider-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+            </svg>
+        </div>
 
-
-
+        <input type="range" class="slider" min="0" max="100" (input)="onSliderInput($event)" />
+    </div>
+</div>
 
 <app-footer></app-footer>
