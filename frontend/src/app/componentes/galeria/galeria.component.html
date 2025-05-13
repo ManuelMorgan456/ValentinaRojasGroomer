@@ -3,40 +3,8 @@
 <br><br><br><br><br><br><br><br>
 
 
-<div class="image-comparison">
-    <div class="images-container">
-        <img class="before-image" src="../../../assets/b1.jpg" alt="" />
-        <img class="after-image" src="../../../assets/a1.jpg" alt="" />
+<app-slider [beforeImageSrc]="'../../../assets/b1.jpg'" [afterImageSrc]="'../../../assets/a1.jpg'"></app-slider>
 
-        <div class="slider-line"></div>
-        <div class="slider-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-            </svg>
-        </div>
-
-        <input type="range" class="slider" min="0" max="100" (input)="onSliderInput($event)" />
-    </div>
-</div>
-
-<div class="image-comparison">
-    <div class="images-container">
-        <img class="before-image" src="../../../assets/b1.jpg" alt="" />
-        <img class="after-image" src="../../../assets/a1.jpg" alt="" />
-
-        <div class="slider-line"></div>
-        <div class="slider-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-            </svg>
-        </div>
-
-        <input type="range" class="slider" min="0" max="100" (input)="onSliderInput($event)" />
-    </div>
-</div>
+<app-slider [beforeImageSrc]="'../../../assets/b2.jpg'" [afterImageSrc]="'../../../assets/a2.jpg'"></app-slider>
 
 <app-footer></app-footer>
