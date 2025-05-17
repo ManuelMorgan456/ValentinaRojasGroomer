@@ -1,2 +1,31 @@
-<app-barra-lateral></app-barra-lateral>
-<p>d-galeria works!</p>
+<div class="galeria-container">
+    <h2>Gestión de Galería</h2>
+
+    <button type="submit" *ngIf="!modoCrear" (click)="mostrarFormularioCrear()">Crear nuevo</button>
+
+    <div *ngIf="modoCrear">
+        <app-d-imagen-form [imagenEditando]="imagenEditando" (guardado)="onGuardado()">
+        </app-d-imagen-form>
+        <button (click)="modoCrear = false">Cancelar</button>
+    </div>
+
+    <div *ngIf="loading">Cargando imágenes...</div>
+
+    <div *ngIf="!loading && imagenes.length === 0">
+        <p>No hay pares de imágenes aún.</p>
+    </div>
+
+    <div class="galeria-grid" *ngIf="!loading && imagenes.length > 0">
+        <div class="imagen-card" *ngFor="let img of imagenes">
+            <h4>{{ img.titulo }}</h4>
+            <div class="imagenes">
+                <img [src]="img.imagenA" alt="Imagen A" />
+                <img [src]="img.imagenB" alt="Imagen B" />
+            </div>
+            <div class="acciones">
+                <button (click)="editarImagen(img)">Editar</button>
+                <button *ngIf="img._id" (click)="eliminarImagen(img._id)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

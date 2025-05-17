@@ -1,88 +1,141 @@
+.d-blog-container {
+    padding: 2rem;
+    margin-left: 15px;
+    /* deja espacio si tu barra lateral está fija */
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
 .blog-header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    /* titulo alineado a la izquierda */
+    gap: 1rem;
+    /* espacio entre titulo y botones */
+    margin-bottom: 1.5rem;
+}
+
+.blog-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+    position: static;
+}
+
+.botones-header {
+    display: flex;
+    gap: 1rem;
+    /* espacio entre botones */
+}
+
+.btn-crear {
+    background-color: #3f51b5;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-cancelar {
+    position: sticky;
+    background-color: #f44336;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background-color: #d32f2f;
+    /* rojo oscuro al pasar el mouse */
+}
+
+
+.btn-crear:hover {
+    background-color: #303f9f;
 }
 
 .form-wrapper {
     margin-bottom: 2rem;
-    padding: 1rem;
-    background: #f9f9f9;
-    border-radius: 0.5rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor de tarjetas */
+.loading {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+}
+
 .blog-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    padding: 1rem;
 }
 
-/* Cada tarjeta */
 .blog-item {
     background: white;
-    border-radius: 0.75rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.8rem;
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
 }
 
 .blog-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-/* Encabezado de la tarjeta: imagen */
-.blog-item-header {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    /* ratio cuadrado */
-    overflow: hidden;
+    transform: translateY(-5px);
 }
 
 .blog-item-header img {
     width: 100%;
-    height: 100%;
+    height: 180px;
     object-fit: cover;
-    /* recorta y centra */
-    object-position: top;
 }
 
-/* Cuerpo con título/estado */
 .blog-item-body {
     padding: 1rem;
 }
 
 .blog-item-body h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #222;
 }
 
 .blog-item-body p {
-    margin: 0;
-    color: #555;
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    color: #666;
 }
 
-/* Acciones: botones más amigables */
 .blog-item-actions {
     display: flex;
-    justify-content: space-between;
-    gap: 0.5rem;
-    padding: 0 1rem 1rem;
+    justify-content: space-around;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #eee;
+    background-color: #f5f5f5;
 }
 
 .blog-item-actions button {
-    flex: 1;
-    padding: 0.5rem;
-    background: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 0.5rem;
+    background-color: #e0e0e0;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.3s;
 }
 
 .blog-item-actions button:hover {
-    background: #eee;
+    background-color: #c5c5c5;
 }

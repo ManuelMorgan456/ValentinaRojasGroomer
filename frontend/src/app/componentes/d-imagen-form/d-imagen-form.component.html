@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="guardar()">
+  <h2>Nueva publicación</h2>
+  <label>Título:</label>
+  <input type="text" formControlName="titulo" />
+
+  <label>Imagen A:</label>
+  <input type="file" (change)="onFileChange($event, 'A')" />
+
+  <label>Imagen B:</label>
+  <input type="file" (change)="onFileChange($event, 'B')" />
+
+  <button type="submit">Guardar</button>
+</form>

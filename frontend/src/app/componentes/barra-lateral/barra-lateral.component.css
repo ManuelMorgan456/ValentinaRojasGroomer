@@ -1,20 +1,25 @@
+
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 240px;
+    width: 250px;
     height: 100vh;
-    background-color: #ffffff;
-    border-right: 1px solid #ddd;
-    padding: 20px;
+    background-color: #1f2937;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .admin-info {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .admin-img {
@@ -22,34 +27,75 @@
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
+    border: 2px solid #4ade80;
 }
 
 .admin-name {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
 }
 
-.nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 15px;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover {
-    color: #007bff;
-}
-
+.nav-links,
 .bottom-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: baseline;
+}
+
+.nav-links a,
+.bottom-links a {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    text-align: center;
+    text-decoration: none;
+    color: #e5e7eb;
+    font-size: 15px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover,
+.bottom-links a:hover {
+    background-color: #374151;
+    color: #fff;
+}
+
+.nav-links a.active,
+.bottom-links a.active {
+    background-color: #4ade80;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .admin-info {
+        display: none;
+    }
+
+    .nav-links,
+    .bottom-links {
+        flex-direction: row;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a,
+    .bottom-links a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
 }

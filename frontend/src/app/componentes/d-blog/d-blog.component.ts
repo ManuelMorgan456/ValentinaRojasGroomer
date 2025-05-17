@@ -81,4 +81,8 @@ export class DBlogComponent implements OnInit {
     this.modoCrear = false;
     this.postEditando = undefined;
   }
+  cancelarFormulario() {
+  this.modoCrear = false;
+}
+
 }
